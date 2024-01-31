@@ -3,10 +3,61 @@
     <head>
         <meta charset="utf-8">
         <title>minewebsite</title>
+        <style>
+            body {
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+
+            /*头部*/
+            .head {
+                padding-top: 50px;
+                padding-bottom: 30px;
+                text-align: center;
+                background: white;
+                color: black;
+                margin: 0;
+            }
+
+            .head h1 {
+                font-size: 60px;
+            }
+
+            /*导航栏*/
+            .guide {
+                background-color: #222;
+                overflow: hidden;
+            }
+
+            /*导航栏链接*/
+            .guide a {
+                float: left;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding: 16px 20px;
+            }
+
+            /*导航条变色*/
+            .guide a:hover {
+                background-color: white;
+                color: black;
+            }
+        </style>
     </head>
     <body>
-        <h1 style="text-align: center;">CoccusQ's Website</h1>
-        <hr>
-        <p>Hi,this is my website.</p>
+        <div class="head">
+            <h1>CoccusQ's Website</h1>
+        </div>
+        <div class="guide">
+            <a herf="#"><b>Home</b></a>
+            <a href="#"><b>About</b></a>
+        </div>
+        <p>Hi, this is <b><i>my website</i></b>.</p>
+        <p>Though the pages are almost empty here, you will witness great changes soon.</p>
+        <p>I'm learning <b>html</b> and <b>CSS</b>, and maybe <b>javascript</b>in the future.</p>
+        <p>Stay tuned!</p>
     </body>
 </html>
