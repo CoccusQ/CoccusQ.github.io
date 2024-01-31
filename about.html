@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                padding: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+
+            /*顶栏*/
+            .top {
+                background-color: white;
+                color: black;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                padding-left: 16px;
+            }
+
+            /*导航栏*/
+            .guide {
+                background-color: #222;
+                overflow: hidden;
+                margin: 0;
+            }
+
+            /*导航栏链接*/
+            .guide a {
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                display: block;
+                padding: 16px;
+            }
+
+            /*导航条变色*/
+            .guide a:hover {
+                background-color: white;
+                color: black;
+            }
+
+            /*内容板块*/
+            .column.side {
+                float: left;
+                width: 20%;
+                padding: 0;
+            }
+
+            .column.middle {
+                float: left;
+                width: 70%;
+                padding: 16px;
+                background-color: white;
+                height: 100%;
+            }
+
+            /* 列后面清除浮动 */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <h1><b>CoccusQ</b></h1>
+        </div>
+        <div class="row">
+            <div class="column side">
+                <div class="guide">
+                    <a href="https://coccusq.github.io/"><b>Home</b></a></li>
+                    <a class="active" href="#"><b>About</b></a></li>
+                </div>
+            </div>
+            <div class="column middle">
+                <h1><b>About This Website</b></h1>
+                <p>Hi, this is <b><i>my website</i></b>.</p>
+                <p>Though the pages are almost empty here, you will witness great changes soon.</p>
+                <p>I'm learning <b>html</b> and <b>CSS</b>, and maybe <b>javascript</b>in the future.</p>
+                <p>Stay tuned!</p>
+            </div>
+        </div>
+    </body>
+</html>
