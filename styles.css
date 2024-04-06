@@ -1,27 +1,28 @@
-
-body {
-    margin: 0px;  
-    padding: 0px;  
+body { 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
 }
+
+a {text-decoration: none;}
 
 /*头部*/
 .top {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 20px;
-    background: white;
     color: black;
 }
 
 .top h1 {
-    font-size: 60px;
+    font-size: 40px;
+    color: rgb(68, 54, 89);
 }
 
 /*导航栏*/
 .guide {
-    background-color: #222;
+    background-color: rgb(67, 15, 75);
     overflow: hidden;
     font-weight: bold;
 }
@@ -45,23 +46,22 @@ body {
 /*内容栏*/
 .column {
     float: left;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-   
-/* 左右侧栏的宽度 */
-.column.side {
-    width: 25%;
+    height: 800px;
 }
    
 /* 中间列宽度 */
 .column.middle {
-    width: 50%;
+    width: 75%;
 }
-   
-/* 响应式布局 - 宽度小于600px时设置上下布局 */
-@media screen and (max-width: 600px) {
-    .column.side, .column.middle {
-    width: 100%;
-    }
+
+/* 侧栏的宽度 */
+.column.side {
+    width: 25%;
+}
+
+/*文章卡片*/
+.card {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
 }
