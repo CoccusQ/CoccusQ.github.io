@@ -1,0 +1,67 @@
+
+body {
+    margin: 0px;  
+    padding: 0px;  
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+}
+
+/*头部*/
+.top {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    background: white;
+    color: black;
+}
+
+.top h1 {
+    font-size: 60px;
+}
+
+/*导航栏*/
+.guide {
+    background-color: #222;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+/*导航栏链接*/
+.guide a {
+    float: left;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 16px 20px;
+}
+
+/*导航条变色*/
+.guide a:hover {
+    background-color: white;
+    color: black;
+}
+
+/*内容栏*/
+.column {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+   
+/* 左右侧栏的宽度 */
+.column.side {
+    width: 25%;
+}
+   
+/* 中间列宽度 */
+.column.middle {
+    width: 50%;
+}
+   
+/* 响应式布局 - 宽度小于600px时设置上下布局 */
+@media screen and (max-width: 600px) {
+    .column.side, .column.middle {
+    width: 100%;
+    }
+}
