@@ -1,3 +1,5 @@
 function displayDate(){
-    document.getElementById("demo").innerHTML=Date();
+    document.getElementById("time").innerHTML = Date();
 }
+
+setInterval(displayDate,1000);
