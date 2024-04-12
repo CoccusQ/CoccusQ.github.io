@@ -3,31 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>俄罗斯方块</title>
+<title>Tetris | 俄罗斯方块</title>
 <style>
     canvas {
         border: 1px solid black;
         display: block;
         margin: 0 auto;
     }
+    .data {
+        text-align: center;
+        font-size: x-large;
+        font-weight: bolder;
+    }
 </style>
 </head>
 <body>
 <canvas id="gameCanvas" width="400" height="800"></canvas>
-<div id="score" style="text-align: center;">score: 0</div>
-<div id="highScore" style="text-align: center;">hign score: 0</div>
+<div class="data">
+    <div id="score">SCORE: 0</div>
+    <div id="highScore">HIGH SCORE: 0</div>
+</div>
 
 <script>
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
-const blockSize = 20;
-const numRows = 40;
-const numCols = 20;
+const blockSize = 40;
+const numRows = 20;
+const numCols = 10;
 const colors = ["#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#00FFFF", "#FF00FF", "#C0C0C0"];
 
 let score = 0;
-let highScore = localStorage.getItem("highScore") || 0;
-document.getElementById("highScore").textContent = "high score: " + highScore;
+let highScore = localStorage.getItem("highScoreT") || 0;
+document.getElementById("highScore").textContent = "HIGH SCORE: " + highScore;
 let board = [];
 for (let row = 0; row < numRows; row++) {
     board[row] = [];
@@ -75,10 +82,6 @@ function movePieceDown() {
         placePiece();
         clearLines();
         currentPiece = generateRandomPiece();
-        if (!isValidMove(0, 0)) {
-            alert("游戏结束！");
-            clearInterval(gameInterval);
-        }
     }
 }
 
@@ -114,12 +117,12 @@ function clearLines() {
             board.unshift(Array(numCols).fill(0));
 
             score++;
-            document.getElementById("score").textContent = "score: " + score; // 更新得分显示
+            document.getElementById("score").textContent = "SCORE: " + score; // 更新得分显示
 
             if (score > highScore) {
                 highScore = score;
-                localStorage.setItem("highScore", highScore);
-                document.getElementById("highScore").textContent = "high score: " + highScore; // 更新历史最高得分显示
+                localStorage.setItem("highScoreT", highScore);
+                document.getElementById("highScore").textContent = "HIGH SCORE: " + highScore; // 更新历史最高得分显示
             }
         }
     }
@@ -192,12 +195,17 @@ document.addEventListener("keydown", event => {
 });
 
 function gameLoop() {
+    if (!isValidMove(0, 0)) {
+        clearInterval(game);
+        alert("游戏结束！");
+        return;
+    }
     movePieceDown();
     drawBoard();
     drawPiece();
 }
 
-setInterval(gameLoop, 200);
+const game = setInterval(gameLoop, 300);
 </script>
 </body>
 </html>
